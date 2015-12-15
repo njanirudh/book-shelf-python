@@ -1,7 +1,7 @@
 # book-shelf-python
 
 This project was made to understand the basics of webscraping and using the data for something useful. I have a lot of books and novels
-at home . Having to keep count of all the books is very difficult . Many of the old books have no proper cover page or last pages . So i 
+at home . Having to keep track of all the books is very difficult . Many of the old books have no proper cover page or last pages and have no description . So i 
 am making a software that would extract all the relevant information about the book (name, author ,description and rating) from "goodreads.com".
 The data extracted is stored in a db . I am also adding the functionalitiy of searching the db when offline .
 
@@ -26,7 +26,8 @@ Important feature that can be added :
 1. Exception handeling .
 2. Saving the book cover thumbnail in the db.
 3. Input sanitization.
-4. UI for the software.
+4. Wether the books have been lent to someone or not.
+5. UI for the software.
 
     
     
