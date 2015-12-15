@@ -2,7 +2,7 @@
 
 This project was made to understand the basics of webscraping and using the data for something useful. I have a lot of books and novels
 at home . Having to keep count of all the books is very difficult . Many of the old books have no proper cover page or last pages . So i 
-am making a software that would extract all the relevent information about the book (name, author ,description and rating) from "goodreads.com".
+am making a software that would extract all the relevant information about the book (name, author ,description and rating) from "goodreads.com".
 The data extracted is stored in a db . I am also adding the functionalitiy of searching the db when offline .
 
 The basic steps in the working of the software is as following :
