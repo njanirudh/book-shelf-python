@@ -1,4 +1,5 @@
 __author__ = 'ANI'
+__author__ = 'ANI'
 
 try   :
     import requests
@@ -74,7 +75,7 @@ def cover_find(filePath):
 
 def search(book_name):
 
-    # The input is taken in by the user either by text input bar or by the 'text input field' or
+    # The input is taken in by the user either by text input  or by the 'text input field' or
     # the 'imgsch_name' returned by reverse search image of the book cover.
 
     headers = {'user-agent':"Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36"}
@@ -85,13 +86,16 @@ def search(book_name):
     soup = BeautifulSoup(data,"html.parser")
 
     search_result=soup.find_all("a",{"class":"bookTitle"})
-    search_list=[]
+    search_list = []
+    search_url = []
+
     for i in search_result:
         temp_title = i.span.text
         search_list.append(temp_title)
+        search_url.append(i.get("href"))
 
         print str(search_result.index(i)+1)+ " " + temp_title
-    return search_list
+    return search_list,search_url
 
 #-----------------------------------------------------------------------------------------------------------------------
 # Extracts the required data about the book from 'goodreads.com '.
@@ -131,7 +135,24 @@ def main():
         if int(selection) == 1 :
             input_name = raw_input(" What is the name of the book : ")
             print("\n")
-            search(input_name)
+
+            ret_list,ret_url = search(input_name)
+
+            print ("\n")
+            option_sel = raw_input("Select the appropriate book : ")
+            return option_sel
+
+            book_sel =  ret_list[int(option_sel)-1]
+            sel_bookurl = "https://www.goodreads.com" + ret_url[int(option_sel)-1]
+
+            print book_sel,sel_bookurl
+
+
+
+
+
+
+
 
         if int(selection) == 2 :
             #img = img_capture()
@@ -146,11 +167,12 @@ def main():
 
 
 
-        if int(selection) == 3 :
+        if int(selection) == 3:
             pass
 
     except:
         print "Not a valid input"
+
 
 #-----------------------------------------------------------------------------------------------------------------------
 # This function creates a new database named 'book.db'
@@ -179,6 +201,5 @@ def book_db():
 if __name__=="__main__":
 
     main()
-
 
 
