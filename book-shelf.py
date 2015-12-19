@@ -1,4 +1,4 @@
-__author__ = 'ANI'
+
 __author__ = 'ANI'
 
 try   :
