@@ -99,7 +99,13 @@ def search(book_name):
 #-----------------------------------------------------------------------------------------------------------------------
 # Extracts the required data about the book from 'goodreads.com '.
 # The data is returned by the function in a list.
-def book_data():
+def book_data(url2):
+    headers = {'user-agent':"Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36"}
+    r =requests.get(url2,headers=headers)
+
+    data = r.text
+    soup = BeautifulSoup(data,"html.parser")
+
 
     book_desc = []
 
@@ -139,17 +145,19 @@ def main():
 
             print ("\n")
             option_sel = raw_input("Select the appropriate book : ")
-            return option_sel
+            #print option_sel
 
             book_sel =  ret_list[int(option_sel)-1]
             sel_bookurl = "https://www.goodreads.com" + ret_url[int(option_sel)-1]
 
             print book_sel,sel_bookurl
+            print "---------------------------------------------------"
 
+            book_desc =  book_data(url2=sel_bookurl)
+            #print book_desc
 
-
-
-
+            for i in book_desc:
+                print i + "\n"
 
 
 
@@ -157,11 +165,15 @@ def main():
             #img = img_capture()
             #img_path= os.path.abspath(img)
 
-            ret_name = cover_find(filePath="img.jpg")
+            ret_name = cover_find(filePath="C:\Users\ANIRUDH\Desktop\python\img.jpg")
             search(book_name=ret_name)
 
             print "\n"
             book_name = raw_input("Select the appropriate book number : ")
+            
+            
+            
+            
 
 
 
