@@ -166,14 +166,27 @@ def main():
             #img_path= os.path.abspath(img)
 
             ret_name = cover_find(filePath="C:\Users\ANIRUDH\Desktop\python\img.jpg")
-            search(book_name=ret_name)
+            ret_list,ret_url = search(book_name=ret_name)
 
             print "\n"
-            book_name = raw_input("Select the appropriate book number : ")
-            
-            
-            
-            
+            option_sel = raw_input("Select the appropriate book number : ")
+
+            book_sel =  ret_list[int(option_sel)-1]
+            sel_bookurl = "https://www.goodreads.com" + ret_url[int(option_sel)-1]
+
+            print book_sel,sel_bookurl
+            print "----------------------------------------------------------------------------------------------------"
+
+            book_desc =  book_data(url2=sel_bookurl)
+            #print book_desc
+
+            for i in book_desc:
+                print i + "\n"
+
+
+
+
+
 
 
 
