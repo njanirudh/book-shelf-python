@@ -1,4 +1,4 @@
-# book-shelf-python
+# Book Shelf
 
 This project was made to understand the basics of webscraping and using the data for something useful. I have a lot of books and novels
 at home . Having to keep track of all the books is very difficult . Many of the old books have no proper cover page or last pages and have no description . So i 
@@ -23,10 +23,10 @@ The basic steps in the working of the software is as following :
     
 Important feature that can be added :
 
-1. Exception handeling .
+1. Exception handling .
 2. Saving the book cover thumbnail in the db.
 3. Input sanitization.
-4. Wether the books have been lent to someone or not.
+4. Whether the books have been lent to someone or not.
 5. UI for the software.
 
     
