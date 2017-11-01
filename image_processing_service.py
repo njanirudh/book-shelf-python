@@ -2,8 +2,8 @@ import requests
 from bs4 import BeautifulSoup
 import xml.etree.ElementTree as ET
 
-key = "mwcjoLC8VXMd6Sj36XqiRA"
-secret = "RK2HFArThXvbJOEMP3pjn5gcIIiWkyMBgl8iFP7o0"
+key = # Add key here
+secret = # Add Secret here
 
 
 def getBookList(name):
@@ -81,11 +81,6 @@ def sanitizeInputText(txt):
 
 
 if __name__ == "__main__":
-    #xmlResponse = getBookList("harry")
-    #val = parseXMLForBookSearch(xmlResponse)
-
-    #for key,value in val.items():
-    #    print(key, value)
 
     rev_img = imgReverseSearch("/home/anirudh/Git/book-shelf-python/image/bookcover_2.jpg")
     print(rev_img)
